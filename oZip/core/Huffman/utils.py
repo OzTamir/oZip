@@ -30,11 +30,11 @@ def get_decoding_dict(data):
 	data_start = 32 + chars_to_read
 	decode_json = data[32: data_start]
 	decode_json = [decode_json[16 * i : 16 * (i + 1)] for i in range(len(decode_json) / 16)]
-	decode_jsonn = []
-	for i, j in enumerate(decode_json):
-		decode_jsonn.append(chr(int(decode_json[i][-8:], 2)))
-	decode_jsonn = ''.join(decode_jsonn)
-	return json.loads(decode_jsonn), data_start
+	decode_str = []
+	for i in decode_json:
+		decode_str.append(chr(int(i[-8:], 2)))
+	decode_str = ''.join(decode_str)
+	return json.loads(decode_str), data_start
 
 
 
