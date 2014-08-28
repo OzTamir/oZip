@@ -23,7 +23,7 @@ class HuffmanCompressor(Compressor):
 		try:
 			json_decode = json.dumps(decode_dict).replace(' ', '')
 		except UnicodeDecodeError:
-			json_decode = json.dumps(decode_dict, ensure_ascii=False).encode('utf-8').replace(' ', '')
+			json_decode = json.dumps(decode_dict, ensure_ascii=False).replace(' ', '')
 		# Convert the decode dict to binary string
 		bin_json = ''.join('{:016b}'.format(int(bin(ord(i))[2:], 2)) for i in json_decode)
 		# Add a 32bit prefix to tell the decompressor the length of the decoding dict.
@@ -42,6 +42,7 @@ class HuffmanDecompressor(Decompressor):
 			raise TypeError('Data should be string, but is %s.' % str(type(data)))
 		# Get the decoding dictionary and the starting point of the actual data
 		decode, start = get_decoding_dict(data)
+		print decode
 		# Initialize variables
 		result = []
 		prefix = ''
@@ -67,6 +68,7 @@ class HuffmanDecompressor(Decompressor):
 			assert prefix == ''
 		except AssertionError, e:
 			p = chr(int(prefix, 2))
+			print p
 			return ''.join(result + [p])
 			raise ValueError('Decompression process finished with leftovers.')
 		# If everything is good, return the decompressed data
