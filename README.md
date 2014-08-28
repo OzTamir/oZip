@@ -11,11 +11,15 @@ Simple compression solution in Python
 
 ## Usage
 To compress a file run the following command:
+
 	$ python cli.py -i <Path to file>
+
 This will create a file.ext.ozip in the same path.
 
 To decompress a file, run the following command:
+
 	$ python cli.py -i <oZip File> -d
+
 This will decompress the file in the same path.
 
 ## Example:
