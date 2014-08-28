@@ -4,9 +4,10 @@ oZip
 Simple compression solution in Python
 
 ## To-Do:
- - Make it work with more then only text files
- - Make it a CLI tool
- - Add LZ77 compression for even better performance 
+ - Make sure it works with various file types
+ - Test for cross-platform support (currently tested only on OSX)
+ - Add LZ77 compression for even better performance
+ - Add a simple GUI using [Gooey](https://github.com/chriskiehl/Gooey)
 
 ## Example:
 See example.py
