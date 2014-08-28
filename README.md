@@ -9,6 +9,15 @@ Simple compression solution in Python
  - Add LZ77 compression for even better performance
  - Add a simple GUI using [Gooey](https://github.com/chriskiehl/Gooey)
 
+## Usage
+To compress a file run the following command:
+	$ python cli.py -i <Path to file>
+This will create a file.ext.ozip in the same path.
+
+To decompress a file, run the following command:
+	$ python cli.py -i <oZip File> -d
+This will decompress the file in the same path.
+
 ## Example:
 See example.py
 	
