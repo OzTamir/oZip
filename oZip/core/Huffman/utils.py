@@ -1,6 +1,6 @@
 from heapq import heappush, heappop, heapify
 from collections import Counter
-import json
+import pickle as json#import dumps, loadsjson
 
 def create_tree(data):
 	''' Create huffman encoding for a given string '''
@@ -34,8 +34,8 @@ def get_decoding_dict(data):
 	for i in decode_json:
 		decode_str.append(chr(int(i[-8:], 2)))
 	decode_str = ''.join(decode_str)
-	return json.loads(decode_str), data_start
+	try:
+		return json.loads(decode_str), data_start
+	except UnicodeDecodeError:
+		return json.loads(unicode(decode_str, "utf-8")), data_start
 
-
-
-	# 		bin_json = ''.join(bin(ord(i))[2:] for i in json_decode)

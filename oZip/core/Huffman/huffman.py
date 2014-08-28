@@ -20,7 +20,10 @@ class HuffmanCompressor(Compressor):
 		# Create the decoding dictionary
 		decode_dict = build_decode_dict(encoding)
 		# Convert the decoding dictionary to json so we can add it
-		json_decode = json.dumps(decode_dict).replace(' ', '')
+		try:
+			json_decode = json.dumps(decode_dict).replace(' ', '')
+		except UnicodeDecodeError:
+			json_decode = json.dumps(decode_dict, ensure_ascii=False).encode('utf-8').replace(' ', '')
 		# Convert the decode dict to binary string
 		bin_json = ''.join('{:016b}'.format(int(bin(ord(i))[2:], 2)) for i in json_decode)
 		# Add a 32bit prefix to tell the decompressor the length of the decoding dict.
@@ -63,6 +66,8 @@ class HuffmanDecompressor(Decompressor):
 		try:
 			assert prefix == ''
 		except AssertionError, e:
+			p = chr(int(prefix, 2))
+			return ''.join(result + [p])
 			raise ValueError('Decompression process finished with leftovers.')
 		# If everything is good, return the decompressed data
 		return ''.join(result)
