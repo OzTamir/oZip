@@ -1,7 +1,6 @@
 class CompressionEngine(object):
 	"""Base class for Compression Engines"""
 	def __init__(self, compress_type='Non-defined'):
-		super(Compresser, self).__init__()
 		self.type = compress_type
 		self.compressor = None
 		self.decompressor = None

@@ -1,5 +1,5 @@
-from utils import *
-from ..base import Compressor, Decompressor
+from base import Compressor, Decompressor
+from huffman_utils import *
 
 class HuffmanCompressor(Compressor):
 	def __init__(self):
@@ -42,7 +42,6 @@ class HuffmanDecompressor(Decompressor):
 			raise TypeError('Data should be string, but is %s.' % str(type(data)))
 		# Get the decoding dictionary and the starting point of the actual data
 		decode, start = get_decoding_dict(data)
-		print decode
 		# Initialize variables
 		result = []
 		prefix = ''
@@ -67,9 +66,6 @@ class HuffmanDecompressor(Decompressor):
 		try:
 			assert prefix == ''
 		except AssertionError, e:
-			p = chr(int(prefix, 2))
-			print p
-			return ''.join(result + [p])
 			raise ValueError('Decompression process finished with leftovers.')
 		# If everything is good, return the decompressed data
 		return ''.join(result)
