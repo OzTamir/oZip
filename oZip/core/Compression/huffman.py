@@ -66,6 +66,16 @@ class HuffmanDecompressor(Decompressor):
 		try:
 			assert prefix == ''
 		except AssertionError, e:
-			raise ValueError('Decompression process finished with leftovers.')
+			# Due to padding, sometimes the leftovers are a char that lost some of it's 0 prefix
+			for i in range(8 - len(prefix)):
+				prefix = '0' + prefix
+				# Add 0 to the prefix, and check if its in the decoding dict
+				if prefix in decode:
+					# If it is, NOW we can return
+					result.append(decode[prefix])
+					prefix = ''
+					break
+			if prefix != '':
+				raise ValueError('Decompression process finished with leftovers.')
 		# If everything is good, return the decompressed data
 		return ''.join(result)
