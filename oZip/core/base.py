@@ -28,7 +28,6 @@ class CompressionEngine(object):
 		else:
 			return self.decompressor(compressed_data)
 
-
 class Compressor(object):
 	"""Base class for Compressors"""
 	def __init__(self):
