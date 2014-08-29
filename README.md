@@ -1,7 +1,10 @@
-oZip
+oZip - Simple compression solution 
+===
+[![PyPI version](https://badge.fury.io/py/oZip.svg)](http://badge.fury.io/py/oZip)
 ====
 
-## Simple compression solution in Python
+
+
 
 ![Demo](https://raw2.github.com/OzTamir/oZip/master/demo.png)
 
