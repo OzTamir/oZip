@@ -10,22 +10,21 @@ def read(fname):
 
 setup(
     name = "oZip",
-    version = "1.0",
+    version = "1.1",
     author = "Oz Tamir",
     author_email = "TheOzTamir@gmail.com",
     description = ("A Simple Compression Solution"),
     license = "GNU GPL v2.0",
     keywords = "compression zip huffman",
-    url = "http://packages.python.org/an_example_pypi_project",
+    url = "http://oztamir.github.io/oZip/",
     packages=['oZip', 'oZip.core', 'oZip.core.Compression'],
     entry_points = {
-            'console_scripts' : ['ozip = oZip.cli:run']
+            'console_scripts' : ['ozip = oZip.cli:run', 'ozip-gui = oZip.gui:main']
     },
-    long_description=read('README.md'),
+    long_description=read('README.rst'),
     classifiers=[
         "Development Status :: 3 - Alpha",
-        "Topic :: Utilities",
-        "Environment :: Console",
+        "Topic :: System :: Archiving :: Compression",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     ],
 )

@@ -3,7 +3,7 @@ from Queue import Queue
 from threading import Thread
 import time
 # oZip Handler
-from oZip.main import main
+from main import main
 
 def Worker(i, q, err_q, decompress):
 	''' A Worker thread to process a file '''
