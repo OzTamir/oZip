@@ -22,7 +22,7 @@ install by running the following commands:
 If you have any problem with the setup process, you are welcomed to open
 a Issue in the project’s repository.
 
-Usage
+CLI Usage
 -----
 
 To compress a file run the following command:
@@ -41,6 +41,17 @@ To decompress a file, run the following command:
 
 This will decompress the file in the same path.
 
+GUI Usage
+-----
+
+To run the GUI version of oZip, simply run the following command:
+
+::
+
+    $ ozip -i <Path to file>
+
+This will invoke the GUI version of oZip and it's easy to use from this point
+
 Roadmap
 -------
 
@@ -48,12 +59,10 @@ Going forward there are still many things I’m planning to improve, both
 in the format design and in my implementation. Just a few of the planned
 improvements:
 
--  Packaging oZip as a CLI tool using setuptools
 -  Adding a testing suite and make sure oZip plays nice on different
    platforms
 -  Optimize both speed and compression ratio
 -  Adding one of the LZ flavours to improve compression ratio
--  Creating a packaged executable with a simple GUI
 
 License
 -------

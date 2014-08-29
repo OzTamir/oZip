@@ -10,7 +10,7 @@ def read(fname):
 
 setup(
     name = "oZip",
-    version = "1.1",
+    version = "1.1.1",
     author = "Oz Tamir",
     author_email = "TheOzTamir@gmail.com",
     description = ("A Simple Compression Solution"),
