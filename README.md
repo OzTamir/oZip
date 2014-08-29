@@ -1,13 +1,9 @@
 oZip
 ====
 
-Simple compression solution in Python
+## Simple compression solution in Python
 
-## To-Do:
- - Make sure it works with various file types
- - Test for cross-platform support (currently tested only on OSX)
- - Add LZ77 compression for even better performance
- - Add a simple GUI using [Gooey](https://github.com/chriskiehl/Gooey)
+![Example](https://raw2.github.com/OzTamir/oZip/master/demo.png)
 
 ## Usage
 To compress a file run the following command:
@@ -22,7 +18,9 @@ To decompress a file, run the following command:
 
 This will decompress the file in the same path.
 
-## Example:
-See example.py
-	
-![Example](https://raw2.github.com/OzTamir/oZip/master/demo.png)
+## To-Do:
+ - Add LZ77 compression for even better performance (See branch LZ)
+ - Make sure it works with various file types
+ - **Optimize!!!**
+ - Test for cross-platform support (currently tested only on OSX)
+ - Add a simple GUI using [Gooey](https://github.com/chriskiehl/Gooey)
