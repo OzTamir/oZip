@@ -38,7 +38,7 @@ def main(path, decompress):
 			print 'Something went wrong. Please issue a bug report on https://github.com/OzTamir/oZip/issues' + \
 				' with a screenshot of this error.'
 			print 'Error:\n%s' % str(e)
-			sys.exit(1)
+			return
 	else:
 		try:
 			engine.compress(path)
@@ -49,6 +49,4 @@ def main(path, decompress):
 			print 'Something went wrong. Please issue a bug report on https://github.com/OzTamir/oZip/issues' + \
 				' with a screenshot of this error.'
 			print 'Error:\n%s' % str(e)
-			sys.exit(1)
-
-	sys.exit(0)
+			return
