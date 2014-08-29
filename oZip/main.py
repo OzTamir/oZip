@@ -11,12 +11,16 @@ def check_file(path):
 def choose_engine(path):
 	''' Choose a compression engine according to the file type '''
 	ext = path.split('.')
+	# If the extansion is ozip, get the original format
 	if ext[-1] == 'ozip':
 		ext = ext[-2]
+	# Get the file's format
 	else:
 		ext = ext[-1]
+	# If it's a text file, use the text engine
 	if ext == 'txt':
 		return TextCompressor()
+	# Else, use the filse engine
 	return FilesCompressor()
 
 def main(path, decompress):
@@ -32,23 +36,25 @@ def main(path, decompress):
 	# Do the thing
 	if decompress:
 		try:
+			# Try to decompress the file
 			engine.decompress(path)
-			print 'Decompression done.'
 		except Exception, e:
-			print 'Something went wrong. Please issue a bug report on https://github.com/OzTamir/oZip/issues' + \
-				' with a screenshot of this error.'
-			print 'Error:\n%s' % str(e)
-			sys.exit(1)
+			# Report if there were errors
+			return (path, str(e))
 	else:
 		try:
+			# Try to compress the file
 			engine.compress(path)
-			print '\n'.join(['Compression done.', \
-							'Original file size: %s kb' % str(os.path.getsize(path) / 1024), \
-							'Compressed file size: %s kb' % str(os.path.getsize(path + '.ozip') / 1024)])
 		except Exception, e:
-			print 'Something went wrong. Please issue a bug report on https://github.com/OzTamir/oZip/issues' + \
-				' with a screenshot of this error.'
-			print 'Error:\n%s' % str(e)
-			sys.exit(1)
+			# Report if there were errors
+			return (path, str(e))
+	return None
 
-	sys.exit(0)
+
+
+
+
+
+
+
+
