@@ -17,7 +17,7 @@ setup(
     license = "GNU GPL v2.0",
     keywords = "compression zip huffman",
     url = "http://packages.python.org/an_example_pypi_project",
-    packages=['oZip'],
+    packages=['oZip', 'oZip.core', 'oZip.core.Compression'],
     entry_points = {
             'console_scripts' : ['ozip = oZip.cli:run']
     },
