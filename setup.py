@@ -18,6 +18,9 @@ setup(
     keywords = "compression zip huffman",
     url = "http://packages.python.org/an_example_pypi_project",
     packages=['oZip'],
+    entry_points = {
+            'console_scripts' : ['ozip = oZip.cli:run']
+    },
     long_description=read('README.md'),
     classifiers=[
         "Development Status :: 3 - Alpha",
