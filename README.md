@@ -5,16 +5,29 @@ oZip
 
 ![Demo](https://raw2.github.com/OzTamir/oZip/master/demo.png)
 
+## Installation
+To install oZip, simply use pip:
+
+	$ pip install ozip
+
+If for some reason pip is unavailable (Or you're on Windows), you can install by running the following commands:
+
+	$ git clone https://github.com/OzTamir/oZip
+	$ cd oZip
+	$ python setup.py install
+
+If you have any problem with the setup process, you are welcomed to open a Issue in the project's repository.
+
 ## Usage
 To compress a file run the following command:
 
-	$ python cli.py -i <Path to file>
+	$ ozip -i <Path to file>
 
 This will create a file.ext.ozip in the same path.
 
 To decompress a file, run the following command:
 
-	$ python cli.py -i <oZip File> -d
+	$ ozip -i <oZip File> -d
 
 This will decompress the file in the same path.
 
