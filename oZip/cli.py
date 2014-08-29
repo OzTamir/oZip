@@ -5,7 +5,7 @@ def run():
 	parser = argparse.ArgumentParser()
 
 	parser.add_argument('-i', action='store', dest='path',
-						help='Path to input file')
+						help='Path to input file', required=True)
 
 	parser.add_argument('-d', action='store_true', default=False,
 						dest='should_decompress',
