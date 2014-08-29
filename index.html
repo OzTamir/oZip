@@ -34,7 +34,7 @@
           <h3>
 <a name="introducing-ozip---a-simple-yet-powerful-compression-solution-written-in-python-and-ready-to-take-over-the-world" class="anchor" href="#introducing-ozip---a-simple-yet-powerful-compression-solution-written-in-python-and-ready-to-take-over-the-world"><span class="octicon octicon-link"></span></a>Introducing oZip - a simple yet powerful compression solution, written in Python and ready to take over the world.</h3>
 
-<hr><p><img src="https://raw2.github.com/OzTamir/oZip/master/demo.png" alt="Demo"></p>
+<hr><p><img src="https://raw2.github.com/OzTamir/oZip/master/resources/demo.png" alt="Demo"></p>
 
 <h2>
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
@@ -54,7 +54,7 @@ $ python setup.py install
 <p>If you have any problem with the setup process, you are welcomed to open a Issue in the project's repository.</p>
 
 <h2>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+<a name="cli-usage" class="anchor" href="#cli-usage"><span class="octicon octicon-link"></span></a>CLI Usage</h2>
 
 <p>To compress a file run the following command:</p>
 
@@ -71,6 +71,18 @@ $ python setup.py install
 <p>This will decompress the file in the same path.</p>
 
 <h2>
+<a name="gui-usage" class="anchor" href="#gui-usage"><span class="octicon octicon-link"></span></a>GUI Usage</h2>
+
+<p><img src="https://raw2.github.com/OzTamir/oZip/master/resources/GUI.png" alt="GUI demo"></p>
+
+<p>To use the GUI version of oZip, simply run:</p>
+
+<pre><code>$ ozip-gui
+</code></pre>
+
+<p>This will invoke the GUI and will allow you to use oZip just as you would from the command line.</p>
+
+<hr><h2>
 <a name="ozip1-specification" class="anchor" href="#ozip1-specification"><span class="octicon octicon-link"></span></a>oZip1 Specification</h2>
 
 <p>The current version of oZip is actually just an implantation of the <em>Huffman</em> algorithm. The compression process starts with processing the data to create a frequency table. Next, we create a Huffman tree based on this table and encode the date using the resulted code.</p>
