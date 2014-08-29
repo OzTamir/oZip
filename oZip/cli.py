@@ -1,7 +1,7 @@
-from oZip.main import main as run
+from main import main
 import argparse
 
-def main():
+def run():
 	parser = argparse.ArgumentParser()
 
 	parser.add_argument('-i', action='store', dest='path',
@@ -16,7 +16,7 @@ def main():
 	results = parser.parse_args()
 	path = results.path
 	action = results.should_decompress
-	run(path, action)
+	main(path, action)
 
 if __name__ == '__main__':
-	main()
+	run()
