@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>oZip by OzTamir</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>oZip</h1>
+          <h2>Simple compression solution in Python</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/OzTamir/oZip/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/OzTamir/oZip/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/OzTamir/oZip" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a name="ozip---simple-compression-solution" class="anchor" href="#ozip---simple-compression-solution"><span class="octicon octicon-link"></span></a>oZip - Simple compression solution</h1>
+
+<h1>
+<a name="" class="anchor" href="#"><span class="octicon octicon-link"></span></a><a href="http://badge.fury.io/py/oZip"><img src="https://badge.fury.io/py/oZip.svg" alt="PyPI version"></a>
+</h1>
+
+<p><img src="https://raw2.github.com/OzTamir/oZip/master/demo.png" alt="Demo"></p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>To install oZip, simply use pip:</p>
+
+<pre><code>$ pip install ozip
+</code></pre>
+
+<p>If for some reason pip is unavailable (Or you're on Windows), you can install by running the following commands:</p>
+
+<pre><code>$ git clone https://github.com/OzTamir/oZip
+$ cd oZip
+$ python setup.py install
+</code></pre>
+
+<p>If you have any problem with the setup process, you are welcomed to open a Issue in the project's repository.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>To compress a file run the following command:</p>
+
+<pre><code>$ ozip -i &lt;Path to file&gt;
+</code></pre>
+
+<p>This will create a file.ext.ozip in the same path.</p>
+
+<p>To decompress a file, run the following command:</p>
+
+<pre><code>$ ozip -i &lt;oZip File&gt; -d
+</code></pre>
+
+<p>This will decompress the file in the same path.</p>
+
+<h2>
+<a name="ozip1-specification" class="anchor" href="#ozip1-specification"><span class="octicon octicon-link"></span></a>oZip1 Specification</h2>
+
+<p>The current version of oZip is actually just an implantation of the <em>Huffman</em> algorithm. The compression process starts with processing the data to create a frequency table. Next, we create a Huffman tree based on this table and encode the date using the resulted code.</p>
+
+<p>At this stage we face a problem. We have an compressed data and a codebook which allows us to decode the data. However, because the compressed data can't be decoded without the codebook, we need to deliver the codebook along with the compressed file. This pose another problem - since the resulted data will be a binary string ('1's and '0's), we won't be able tell if we are reading the codebook or the compressed data.</p>
+
+<p><img src="http://www.poweruser.co.il/wp-content/uploads/2014/08/oZip1-Structure.png" alt="oZip1 Structure"></p>
+
+<p>To solve this problem, every oZip1 archive file starts with a 32bit prefix which store the length of the codebook. In other words - the first 32bits of the archive tells the decompresser how many bits should it read to restore the codebook.</p>
+
+<h2>
+<a name="roadmap" class="anchor" href="#roadmap"><span class="octicon octicon-link"></span></a>Roadmap</h2>
+
+<p>Going forward there are still many things I'm planning to improve, both in the format design and in my implementation. Just a few of the planned improvements:</p>
+
+<ul>
+<li>  Packaging oZip as a CLI tool using setuptools</li>
+<li>  Adding a testing suite and make sure oZip plays nice on different platforms</li>
+<li>  Optimize both speed and compression ratio</li>
+<li>  Adding one of the LZ flavours to improve compression ratio</li>
+<li>  Creating a packaged executable with a simple GUI</li>
+</ul><h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>This project is licensed under the GNU GPL v2.0 License. Please read the LICENSE.txt file to learn more about the allowed usage of this project.</p>
+        </section>
+
+        <footer>
+          oZip is maintained by <a href="https://github.com/OzTamir">OzTamir</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
