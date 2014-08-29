@@ -1,7 +1,7 @@
 # oZip - Simple compression solution
 ===
 
-![Demo](https://raw2.github.com/OzTamir/oZip/master/demo.png)
+![Demo](https://raw2.github.com/OzTamir/oZip/master/resources/demo.png)
 
 ## Installation
 To install oZip, simply use pip:
@@ -16,7 +16,7 @@ If for some reason pip is unavailable (Or you're on Windows), you can install by
 
 If you have any problem with the setup process, you are welcomed to open a Issue in the project's repository.
 
-## Usage
+## CLI Usage
 To compress a file run the following command:
 
 	$ ozip -i <Path to file>
@@ -28,6 +28,16 @@ To decompress a file, run the following command:
 	$ ozip -i <oZip File> -d
 
 This will decompress the file in the same path.
+
+## GUI Usage
+
+![GUI demo](https://raw2.github.com/OzTamir/oZip/master/resources/GUI.png)
+
+To use the GUI version of oZip, simply run:
+
+	$ ozip-gui
+
+This will invoke the GUI and will allow you to use oZip just as you would from the command line.
 
 ***
 
