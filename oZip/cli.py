@@ -16,7 +16,13 @@ def run():
 	results = parser.parse_args()
 	path = results.path
 	action = results.should_decompress
-	main(path, action)
+	res = main(path, action)
+	if res:
+		print 'Error while processing %s: \n%s' % res
+		print 'Please Report this error (with a screenshot) in the following URL:'
+		print 'http://github.com/OzTamir/oZip/issues'
+	else:
+		print 'Processing completed successfully.'
 
 if __name__ == '__main__':
 	run()
